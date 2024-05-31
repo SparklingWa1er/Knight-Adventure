@@ -21,6 +21,10 @@ class UI:
         self.display_surface.blit(text_surface,text_rect)
         pygame.draw.rect(self.display_surface,ui_bg_color,text_rect.inflate(20,20),3)
     def display(self,player):
+        try:
+            if(player.can_switch_magic):pass
+        except:
+            player.can_switch_magic=True
         self.show_bar(player.health,player.stats["health"],self.health_bar_rect,health_color)
         self.show_bar(player.energy,player.stats["energy"],self.energy_bar_rect,energy_color)
         self.show_exp(player.exp)
