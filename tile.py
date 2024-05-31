@@ -5,5 +5,5 @@ class Tile(pygame.sprite.Sprite):
         super().__init__(groups)
         self.image=surface
         self.rect=self.image.get_rect(topleft=pos)
-        self.hitbox=self.rect.inflate(0,-10)
-        self.sprite_type=sprite_type
+        self.hitbox=self.rect.inflate(0,-hitbox_offset_y[sprite_type])
+        self.type=sprite_type
