@@ -5,6 +5,7 @@ class Weapon(pygame.sprite.Sprite):
     def __init__(self,player,groups):
         super().__init__(groups)
         direction=player.status.split("_")[0]
+        self.type="weapon"
         self.image=pygame.transform.scale(pygame.image.load("image/weapon/{}.png".format(direction)), (40,40)).convert_alpha()
         if(direction=="right"):
             self.rect=self.image.get_rect(midleft=(player.rect.midright+vector(0,16)))
